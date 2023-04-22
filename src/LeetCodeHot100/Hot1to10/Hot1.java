@@ -34,8 +34,10 @@ public class Hot1 {
         int target = sc.nextInt();
 
         int[] res = twoSum(integers, target);
-        for (int num : res){
-            System.out.println(num);
+        if (res != null) {
+            for (int num : res) {
+                System.out.println(num);
+            }
         }
     }
 }
