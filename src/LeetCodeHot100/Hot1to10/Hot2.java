@@ -102,10 +102,6 @@ public class Hot2 {
             l.next = new ListNode(1);
         }
 
-//        while(head.next!= null){
-//            System.out.println(head.next.val);
-//            head = head.next;
-//        }
         return head.next;
 
     }
