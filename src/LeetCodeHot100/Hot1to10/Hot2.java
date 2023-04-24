@@ -10,6 +10,7 @@ public class Hot2 {
     }
     /*
     最开始想到的方法
+    不对！！！
      */
     public static ListNode addTwoNumbersOne(ListNode l1, ListNode l2) {
         int sum1 = 0;
@@ -47,7 +48,10 @@ public class Hot2 {
         return res.next;
     }
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2){
+    /*
+    太多重复冗余代码！！！
+     */
+    public static ListNode addTwoNumbersTwo(ListNode l1, ListNode l2){
         ListNode head = new ListNode();
         int flag = 0; // flag 代表进位
 
@@ -97,13 +101,44 @@ public class Hot2 {
             l = l.next;
             l2 = l2.next;
         }
-
         if (flag == 1){
             l.next = new ListNode(1);
         }
 
+//        while(head.next!= null){
+//            System.out.println(head.next.val);
+//            head = head.next;
+//        }
         return head.next;
 
+    }
+
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2){
+        ListNode head = new ListNode();
+        ListNode pre = head;
+
+        int flag = 0; // flag 代表进位
+
+        while(l1 != null || l2 != null){
+            int x = l1 == null ? 0 : l1.val;
+            int y = l2 == null ? 0 : l2.val;
+
+            int sum = x + y + flag;
+            flag = sum > 9 ? 1 : 0;
+            pre.next = new ListNode(sum % 10);
+            pre = pre.next;
+
+            if (l1 != null){
+                l1 = l1.next;
+            }
+            if (l2 != null){
+                l2 = l2.next;
+            }
+        }
+        if(flag == 1){
+            pre.next = new ListNode(1);
+        }
+        return head.next;
     }
     public static void main(String[] args) {
         System.out.println("This is LeetCode Hot100-2!!!");
