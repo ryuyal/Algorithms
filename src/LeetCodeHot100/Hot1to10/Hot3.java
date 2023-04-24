@@ -19,7 +19,7 @@ public class Hot3 {
                 if (!map.containsKey(ch)){
                     map.put(ch, i);
                 }else{
-                    newStart = Math.max(map.get(ch)+1, newStart);
+                    newStart = Math.max(map.get(ch)+1, newStart); // 注意tmmuxt这种情况
                     map.put(ch, i);
                 }
             }
