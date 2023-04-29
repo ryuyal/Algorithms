@@ -21,26 +21,27 @@ public class Hot40_101 {
         if (root == null){
             return true;
         }
-        boolean res = compare(root.left , root.right);
+        if (root.left == null && root.right == null){
+            return true;
+        }
 
-        return res;
+        return compare(root.left, root.right);
     }
     public static boolean compare(TreeNode nodeleft, TreeNode noderight){
-        if (nodeleft == null && noderight != null){
-            return false;
-        }else if (nodeleft != null && noderight == null){
-            return false;
-        }else if (nodeleft == null && noderight == null){
+        if (nodeleft == null && noderight == null){
             return true;
+        }else if (nodeleft == null){
+            return false;
+        }else if (noderight == null){
+            return false;
         }else if(nodeleft.val != noderight.val){
             return false;
         }
 
-        // 剩下的情况就是 左右节点都不空 且数值相同
-        boolean case1 = compare(nodeleft.left, noderight.right);
-        boolean case2 = compare(nodeleft.right, noderight.left);
+        boolean res1 = compare(nodeleft.left, noderight.right);
+        boolean res2 = compare(nodeleft.right, noderight.left);
 
-        return case1 && case2;
+        return res1 && res2;
     }
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
