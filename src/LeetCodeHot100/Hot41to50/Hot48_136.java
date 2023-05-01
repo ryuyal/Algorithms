@@ -6,7 +6,21 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class Hot48_136 {
+    /*
+    异或运算: 相同为0 不同为1
+    交换律：a ^ b ^ c <=> a ^ c ^ b
+    任何数于0异或为任何数 0 ^ n => n
+    相同的数异或为0: n ^ n => 0
+     */
     public static int singleNumber(int[] nums) {
+        int ans = 0;
+        for (int num : nums){
+            ans ^= num;
+        }
+        return ans;
+    }
+
+    public static int singleNumber2(int[] nums) {
         Set<Integer> hs = new HashSet<>();
 
         for (int num : nums){
