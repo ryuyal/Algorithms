@@ -17,6 +17,25 @@ public class Hot94_543 {
         }
     }
 
+//    static int maxd = 0;
+//    public static int diameterOfBinaryTree(TreeNode root) {
+//        depth(root);
+//        return maxd;
+//    }
+//    public static int depth(TreeNode root){
+//        if (root == null){
+//            return 0;
+//        }
+//
+//        int left = depth(root.left);
+//        int right = depth(root.right);
+//
+//        maxd = Math.max(left + right, maxd); //将每个节点最大直径(左子树深度+右子树深度)当前最大值比较并取大者
+//
+//        return Math.max(left,right)+1;//返回节点深度
+//
+//    }
+
     static int maxd = 0;
     public static int diameterOfBinaryTree(TreeNode root) {
         depth(root);
@@ -30,13 +49,13 @@ public class Hot94_543 {
         int left = depth(root.left);
         int right = depth(root.right);
 
-        maxd = Math.max(left + right, maxd); //将每个节点最大直径(左子树深度+右子树深度)当前最大值比较并取大者
+        maxd = Math.max(left+right, maxd);
 
-        return Math.max(left,right)+1;//返回节点深度
-
+        return Math.max(left, right)+1;
     }
 
-    public static void main(String[] args) {
+
+        public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         TreeNode l1_left = new TreeNode(2);
         TreeNode l1_right = new TreeNode(3);
