@@ -15,8 +15,23 @@ public class Offer2_003 {
             i&1 可以判断i为奇数还是偶数
             i>>1 相当于将i除以 2
              */
+
 //            res[i] = res[i>>1] + (i&1);
-            res[i] = res[i/2] + i % 2;
+
+            /*
+            相当于
+             */
+//            res[i] = res[i/2] + i % 2;
+
+            /*
+            相当于
+             */
+            if(i % 2 == 0){
+                res[i] = res[i/2];
+            }else{
+                res[i] = res[i-1] + 1;
+            }
+
         }
 
         return res;
