@@ -1,8 +1,7 @@
 ## Data Structure and Algorithms
 
-[x] [**LeetCode Hot 100**](https://github.com/ryuyal/Algorithms/tree/main/src/LeetCodeHot100)
-  - [ ]  1 - 10 (1 - 19)
-  - [ ]  11 - 20 (20 - 42)
+- [x] [**LeetCode Hot 100**](https://github.com/ryuyal/Algorithms/tree/main/src/LeetCodeHot100)
+  - [x]  1 - 10 (1 - 19) - [x]  11 - 20 (20 - 42)
   - [ ]  21 - 30 (46 - 72)
   - [ ]  31 - 40 (75 - 101)
   - [ ]  41 - 50 (102 - 141)
