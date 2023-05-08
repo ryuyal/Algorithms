@@ -41,7 +41,18 @@ public class LeetCode_253 {
             list.add(new int[]{interval[1], -1}); // 会议结束时间
         }
 
+        for (int[] l : list){
+            System.out.print(Arrays.toString(l));
+        }
+        System.out.println();
+
         list.sort((a, b) -> a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]);
+
+        System.out.println("After sort");
+        for (int[] l : list){
+            System.out.print(Arrays.toString(l) + " ");
+        }
+        System.out.println();
 
         int res = 0;
         int count = 0;
