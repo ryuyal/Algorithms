@@ -17,7 +17,7 @@ public class LeetCode_252 {
     public static boolean canAttendMeetings(Interval[] meetings){
         Arrays.sort(meetings, (a, b) -> a.start - b.start);
         for (int i = 0; i < meetings.length-1; ++i){
-            if (meetings[i+1].start < meetings[i].end){
+            if (meetings[i+1].start < meetings[i].end){ // 判断当前meeting的结束时间不能晚于后一个meeting的开始时间
                 return false;
             }
         }
