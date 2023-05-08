@@ -1,10 +1,9 @@
 ## Data Structure and Algorithms
 
-- [x] [**LeetCode Hot 100**](https://github.com/ryuyal/Algorithms/tree/main/src/LeetCodeHot100)
-  - [x]   - 10 (1 - 19)  - [x]  11 - 20 (20 - 42)
+### [**LeetCode Hot 100**](https://github.com/ryuyal/Algorithms/tree/main/src/LeetCodeHot100)
 
-|  |  |  |  |  |  |  |  |  |  |
-|---|---|---|---|---|---|---|---|---|---|
+| Number |  |  |  |  |  |  |  |  |  |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | [1](./src/LeetCodeHot100/Hot1to10/Hot1.java)✔ | [2](./src/LeetCodeHot100/Hot1to10/Hot2.java)✔ | [3](./src/LeetCodeHot100/Hot1to10/Hot3.java)✔ | [4](./src/LeetCodeHot100/Hot1to10/Hot4.java)✔ | [5](./src/LeetCodeHot100/Hot1to10/Hot5.java)✔ | 6(10) | [7(11)](./src/LeetCodeHot100/Hot1to10/Hot7.java)✔ | [8(15)](./src/LeetCodeHot100/Hot1to10/Hot8.java)✔ | [9(17)](./src/LeetCodeHot100/Hot1to10/Hot9.java)✔ | [10(19)](./src/LeetCodeHot100/Hot1to10/Hot10_19.java)✔ |
 | [11(20)](./src/LeetCodeHot100/Hot11to20/Hot11.java)✔ | [12(21)](./src/LeetCodeHot100/Hot11to20/Hot12.java)✔ | 13(22) | 14(23) | 15(31) | 16(32) | 17(33) | 18(34) | 19(39) | 20(42) |
 | [21(46)](./src/LeetCodeHot100/Hot21to30/Hot21.java)✔ | 22(48) | 23(49) | 24(53) | 25(55) | 26(56) | 27(62) | 28(64) | [29(70)](./src/LeetCodeHot100/Hot21to30/Hot29_70.java)✔ | 30(72) |
@@ -16,12 +15,29 @@
 | 81(337) | 82(338) | 83(347) | 84(394) | 85(399) | 86(406) | 87(416) | 88(437) | 89(438) | [90(448)](./src/LeetCodeHot100/Hot81to90/Hot90_448.java)✔ |
 | [91(461)](./src/LeetCodeHot100/Hot91to100/Hot91_461.java)✔ | 92(494) | 93(538) | [94(543)](./src/LeetCodeHot100/Hot91to100/Hot94_543.java)✔ | 95(560) | 96(581) | [97(617)](./src/LeetCodeHot100/Hot91to100/Hot97_617.java)✔ | 98(621) | 99(647) | 100(739) |
 
-  - [ ]  21 - 30 (46 - 72)
-  - [ ]  31 - 40 (75 - 101)
-  - [ ]  41 - 50 (102 - 141)
-  - [ ]  51 - 60 (142 - 206)
-  - [ ]  61 - 70 (207 - 240)
-  - [ ]  71 - 80 (253 - 322)
-  - [ ]  81 - 90 (337 - 448)
-  - [ ]  91 - 100 (461 - 739)
-- [ ] [**剑指offer**](https://github.com/ryuyal/Algorithms/tree/main/src/JianZhiOffer)
+### [**剑指offer**](https://github.com/ryuyal/Algorithms/tree/main/src/JianZhiOffer)
+| Num |  |  |  |  |  |  |  |  |  |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 |
+| 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 |
+| 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 |
+| 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 |
+| 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60 |
+| 61 | 62 | 63 | 64 | 65 | 66 | 67 | 68 |  |  |
+
+### [**剑指offer2**](https://github.com/ryuyal/Algorithms/tree/main/src/JianZhiOffer2)
+| Num |  |  |  |  |  |  |  |  |  |
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| [1](./src/JianZhiOffer2/Offer2_001.java)✔ | [2](./src/JianZhiOffer2/Offer2_002.java)✔ | [3](./src/JianZhiOffer2/Offer2_003.java)✔ | 4 | 5 | [6](./src/JianZhiOffer2/Offer2_006.java)✔ | 7 | 8 | 9 | 10 |
+| 11 | [12](./src/JianZhiOffer2/Offer2_012.java)✔ | 13 | 14 | 15 | 16 | 17 | [18](./src/JianZhiOffer2/Offer2_018.java)✔ | 19 | 20 |
+| 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 |
+| 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 |
+| 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50 |
+| 51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 | 60 |
+| 61 | 62 | 63 | 64 | 65 | 66 | 67 | 68 | 69 | 70 |
+| 71 | 72 | 73 | 74 | 75 | 76 | 77 | 78 | 79 | 80 |
+| 81 | 82 | 83 | 84 | 85 | 86 | 87 | 88 | 89 | 90 |
+| 91 | 92 | 93 | 94 | 95 | 96 | 97 | 98 | 99 | 100 |
+| 101 | 102 | 103 | 104 | 105 | 106 | 107 | 108 | 109 | 110 |
+| 111 | 112 | 113 | 114 | 115 | 116 | 117 | 118 | 119 |  |
