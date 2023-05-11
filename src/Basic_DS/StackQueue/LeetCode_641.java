@@ -23,6 +23,9 @@ public class LeetCode_641 {
             }
             deque[front] = value;
             size++;
+            if (size == 1){ // 只有一个元素的时候
+                rear = front;
+            }
             return true;
         }
 
