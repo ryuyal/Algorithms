@@ -59,7 +59,5 @@ public class LeetCode_622 {
         System.out.println(circularQueue.deQueue()); // 返回 true
         System.out.println(circularQueue.enQueue(4)); // 返回 true
         System.out.println(circularQueue.Rear()); // 返回 4
-
-
     }
 }
