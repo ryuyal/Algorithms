@@ -1,5 +1,6 @@
 package Basic_DS.StackQueue;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
@@ -14,10 +15,12 @@ public class LeetCode_895 {
         public FreqStack() {
             pushCount = 0;
             map = new HashMap<>();
-            pq = new PriorityQueue<>((a, b) -> a[1] == b[1] ? b[2] - a[2] : b[1] - a[1]); // 频率相同时看进入栈的顺序
+            // 如果频率相同 后面push进来的(pushCount较大的)先pop出来
+            pq = new PriorityQueue<>((a, b) -> a[1] == b[1] ? b[2] - a[2] : b[1] - a[1]);
         }
 
         public void push(int val) {
+            // 如果有5个a 那么a-5 a-4 a-3 a-2 a-1都会被加到pa中
             map.put(val, map.getOrDefault(val, 0) + 1 );
             pq.offer(new int[] {val, map.get(val), pushCount++});
         }
