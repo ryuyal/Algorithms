@@ -45,6 +45,5 @@ public class LeetCode_232 {
         System.out.println(myQueue.peek()); // return 1
         System.out.println(myQueue.pop()); // return 1, queue is [2]
         System.out.println(myQueue.empty()); // return false
-
     }
 }
