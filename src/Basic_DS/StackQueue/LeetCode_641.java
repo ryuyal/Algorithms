@@ -91,6 +91,5 @@ public class LeetCode_641 {
         circularDeque.deleteLast();			        // 返回 true
         circularDeque.insertFront(4);			        // 返回 true
         circularDeque.getFront();				// 返回 4
-
     }
 }
