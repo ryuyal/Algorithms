@@ -41,6 +41,9 @@ public class LeetCode_92 {
             cur = next;
         }
 
+        /*
+        important!!!
+         */
         start.next.next = cur;
         start.next = pre;
 
