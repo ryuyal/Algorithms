@@ -53,7 +53,7 @@
 
 |                                           No. |                                             |                                              |                                             |                                               |
 |----------------------------------------------:|--------------------------------------------:|---------------------------------------------:|--------------------------------------------:|----------------------------------------------:|
-| [208](./src/Basic_DS/Trie/LeetCode_208.java)✔ | [211](./src/Basic_DS/Trie/LeetCode211.java)✔ | [212](./src/Basic_DS/Trie/LeetCode_212.java)✔ | [79](./src/Basic_DS/Trie/LeetCode_79.java)✔ | [421](./src/Basic_DS/Trie/LeetCode_421.java)✔ |
+| [208](./src/Basic_DS/Trie/LeetCode_208.java)✔ | [211](./src/Basic_DS/Trie/LeetCode211.java)✔ | [212](./src/Basic_DS/Trie/LeetCode_212.java)✔ | [79](./src/Basic_DS/Trie/LeetCode_79.java)? | [421](./src/Basic_DS/Trie/LeetCode_421.java)✔ |
 
 ### Union Find并查集
 |    No. |                                                   |                                                   |      
@@ -75,6 +75,10 @@
 | [206](./src/Basic_DS/LinkedList/LeetCode_206.java)✔ | [92](./src/Basic_DS/LinkedList/LeetCode_92.java)✔ | [25](./src/Basic_DS/LinkedList/LeetCode_25.java)✔ | [2](./src/Basic_DS/LinkedList/LeetCode_2.java)✔ | [445](./src/Basic_DS/LinkedList/LeetCode_445.java)✔ | [21](./src/LeetCodeHot100/Hot11to20/Hot12.java)✔ | [23](./src/Basic_DS/LinkedList/LeetCode_23.java)✔ | [141](./src/Basic_DS/LinkedList/LeetCode_141.java)✔ | [142](./src/Basic_DS/LinkedList/LeetCode_142.java)✔ | [287](./src/Basic_DS/LinkedList/LeetCode_287.java)✔ |
 
 ### 链表 删除+复制+结构转换
+|                                                 No. |                                                   |                                                   |                                                   |                                                       |                                                     |                                                       |                                                    |     |
+|----------------------------------------------------:|--------------------------------------------------:|--------------------------------------------------:|--------------------------------------------------:|------------------------------------------------------:|----------------------------------------------------:|------------------------------------------------------:|---------------------------------------------------:|----:|
+| [203](./src/Basic_DS/LinkedList/LeetCode_203.java)✔ | [83](./src/Basic_DS/LinkedList/LeetCode_83.java)✔ | [82](./src/Basic_DS/LinkedList/LeetCode_82.java)✔ | [19](./src/LeetCodeHot100/Hot1to10/Hot10_19.java)✔ | [1171](./src/Basic_DS/LinkedList/LeetCode_1171.java)✔ | [234](./src/Basic_DS/LinkedList/LeetCode_234.java)✔ | [160](./src/LeetCodeHot100/Hot41to50/Hot56_160.java)✔ | [138](./src/Basic_DS/LinkedList/LeetCode_138.java)✔ | 426 |
+
 
 ### Comparator比较器
 
