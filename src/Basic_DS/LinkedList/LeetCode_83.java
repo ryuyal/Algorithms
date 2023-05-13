@@ -23,8 +23,6 @@ public class LeetCode_83 {
 
         ListNode pre = head;
 
-//        pre = pre.next;
-
         while(pre != null && pre.next != null){
             if (pre.val == pre.next.val){
                 pre.next = pre.next.next;
