@@ -84,6 +84,17 @@
 
 ---
 
+## 高级数据结构
+### Binary Lifting 倍增
+
+### 线段树
+
+### Binary Index Tree
+
+### RMQ线段树
+
+---
+
 ## 基础算法
 ### 扫描线
 
@@ -98,3 +109,14 @@
 ### 单调栈
 
 ### 单调队列
+
+---
+
+## 高级算法
+### 滚动哈希 Rolling Hash
+
+### Bit Manipulation
+
+### 随机数 Random
+
+### 离线算法
