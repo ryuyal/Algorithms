@@ -13,6 +13,10 @@ public class LeetCode56 {
         }
 
         Arrays.sort(intervals, (a, b) -> a[0]-b[0]);
+//        for (int[] r : intervals) {
+//            System.out.print(Arrays.toString(r) + " ");
+//        }
+//        System.out.println();
 
         int[] cur = intervals[0];
         for (int[] inter : intervals){
