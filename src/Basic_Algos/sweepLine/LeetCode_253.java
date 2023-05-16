@@ -46,7 +46,7 @@ public class LeetCode_253 {
         }
         System.out.println();
 
-        list.sort((a, b) -> a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]);
+        Collections.sort(list, (a, b) -> a[0] == b[0] ? a[1] - b[1] : a[0] - b[0]); // 如果时间相同 结束排在前面
 
         System.out.println("After sort");
         for (int[] l : list){
