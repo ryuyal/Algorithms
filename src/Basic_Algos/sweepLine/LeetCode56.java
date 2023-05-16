@@ -28,7 +28,7 @@ public class LeetCode56 {
             }
         }
         res.add(cur);
-        return res.toArray(new int[0][]);
+        return res.toArray(new int[res.size()][]);
 
     }
     public static void main(String[] args) {
