@@ -7,6 +7,9 @@ public class LeetCode_127 {
     public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Set<String> set = new HashSet<>(wordList);
         Queue<String> q = new LinkedList<>();
+        if(!set.contains(endWord)){
+            return 0;
+        }
 
         q.offer(beginWord);
         int step = 1, N = beginWord.length();
@@ -14,7 +17,7 @@ public class LeetCode_127 {
         while(!q.isEmpty()){
             int size = q.size();
 
-            for (int i = 0; i < size; i++){
+            for (int i = 0; i < size; i++){ // 相当于遍历当前层的所有的node
                 String cur = q.poll();
                 if(cur.equals(endWord)){
                     return step;
@@ -57,9 +60,9 @@ public class LeetCode_127 {
 
         while(!beginSet.isEmpty() && !endSet.isEmpty()){
             Set<String> nextSet = new HashSet<>();
-            for (String word : beginSet){
+            for (String word : beginSet){ // 从beginSet中每一个word展开 看是否能到达endSet
                 char[] chs = word.toCharArray();
-                for (int i = 0; i < N; i++){
+                for (int i = 0; i < N; i++){ // 每一位的字母替换成 'a'-'z'
                     for (char c = 'a'; c <= 'z'; c++){
                         char pre = chs[i];
                         chs[i] = c;
@@ -75,7 +78,7 @@ public class LeetCode_127 {
                     }
                 }
             }
-            if (endSet.size() < nextSet.size()){
+            if (endSet.size() < nextSet.size()){ // 最核心的优化 选择较小的一端进行
                 beginSet = endSet;
                 endSet = nextSet;
             }else{
