@@ -26,8 +26,8 @@ public class Offer2_034 {
                 // else 的情况：两者当前位置的字母相同
             }
 
-            if (!flag){
-                return preStr.length() <= curStr.length();
+            if (!flag && preStr.length() > curStr.length()){
+                return false;
             }
         }
 
