@@ -9,7 +9,7 @@ vector<int> twoSum(vector<int>& nums, int target){
     unordered_map<int, int> um;
 
     for (int i = 0; i < nums.size(); ++i) {
-        if (um.count(target - nums[i]) ==1 ){
+        if (um.count(target - nums[i]) == 1 ){
             return {um[target-nums[i]], i};
         }
 
@@ -18,6 +18,13 @@ vector<int> twoSum(vector<int>& nums, int target){
 
     return {};
 }
-int main(){
 
+int main(){
+    vector<int> nums = {2,7,11,15};
+    int target = 9;
+
+    vector<int> res = twoSum(nums, target);
+    for(int num : res){
+        cout << num << " ";
+    }
 }
