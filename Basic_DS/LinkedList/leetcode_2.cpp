@@ -57,26 +57,45 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 void printList(ListNode * head){
     ListNode * p = head;
     while(p != nullptr){
-        cout << p->val << " ";
+        if(p->next != nullptr){
+            cout << p->val << "->";
+        }else{
+            cout << p->val;
+        }
         p = p->next;
     }
     cout << endl;
 }
 
 int main(){
-    ListNode * head1 = new ListNode(2);
-    ListNode * h1_2 = new ListNode(4);
-    ListNode * h1_3 = new ListNode(3);
-    head1->next = h1_2;
-    h1_2->next = h1_3;
+    ListNode * head1 = new ListNode();
+    ListNode * pre1 = head1;
+    ListNode * head2 = new ListNode();
+    ListNode * pre2 = head2;
 
-    ListNode * head2 = new ListNode(5);
-    ListNode * h2_2 = new ListNode(6);
-    ListNode * h2_3 = new ListNode(4);
-    head2->next = h2_2;
-    h2_2->next = h2_3;
+    int num;
+    while(cin >> num){
+        ListNode * cur = new ListNode(num);
+        pre1->next = cur;
+        pre1 = pre1->next;
+        char ch = getchar();
+        if (ch == '\n'){
+            break;
+        }
+    }
 
-    ListNode * res = addTwoNumbers(head1, head2);
+    while(cin >> num){
+        ListNode * cur = new ListNode(num);
+        pre2->next = cur;
+        pre2 = pre2->next;
+        char ch = getchar();
+        if (ch == '\n'){
+            break;
+        }
+    }
+
+
+    ListNode * res = addTwoNumbers(head1->next, head2->next);
     printList(res);
 
 }
