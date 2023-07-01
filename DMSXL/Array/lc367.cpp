@@ -35,7 +35,7 @@ int main() {
     int num;
     cin >> num;
 
-    bool res = isPerfecSquare(num);
+    bool res = isPerfectSquare(num);
 
     cout << res;
 }
