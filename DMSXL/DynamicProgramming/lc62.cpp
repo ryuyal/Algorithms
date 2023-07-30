@@ -36,7 +36,8 @@ int uniquePaths(int m, int n) {
 
 int main() {
 
-    int res = uniquePaths(1, 1);
+//    int res = uniquePaths(1, 1);
+    int res = uniquePaths(3, 7);
     cout << res << endl;
 
 }
