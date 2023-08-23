@@ -13,13 +13,14 @@ int minSubArrayLen(int target, vector<int> & nums){
     int len = 0;
     int res = nums.size()+1;
 
-    for (int right = 0; right < nums.size(); ++right) { // i 代表华东窗口的终止位置
+    for (int right = 0; right < nums.size(); ++right) { // i 代表滑动窗口的终止位置
         sum += nums[right];
 
         while(sum >= target){
             len = right - left + 1;
+            res = res < len ? res : len;// 更新结果
+
             sum -= nums[left++]; // 减去左边的元素
-            res = res < len ? res : len;
         }
     }
     return res == nums.size()+1 ? 0 : res;
