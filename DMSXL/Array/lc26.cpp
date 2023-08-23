@@ -38,5 +38,10 @@ int main() {
 
     int res = removeDuplicates(nums);
 
-    cout << res ;
+    cout << res << endl;
+
+    for (int i = 0; i < nums.size(); ++i) {
+        cout << nums[i] << " " ;
+    }
+
 }
