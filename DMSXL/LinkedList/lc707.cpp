@@ -90,8 +90,9 @@ public:
         {
             pre = pre->next;
         }
-
+        ListNode * temp = pre->next;
         pre->next = pre->next->next;
+        delete temp;
         size--;
     }
 
