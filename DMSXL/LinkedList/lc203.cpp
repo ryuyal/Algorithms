@@ -22,7 +22,9 @@ ListNode * removeElements(ListNode* head, int val) {
     while(pre->next != nullptr){
         if (pre->next->val == val)
         {
+            ListNode * temp = pre->next;
             pre->next = pre->next->next;
+            delete temp;
         }else{
             pre = pre->next;
         }
@@ -33,7 +35,7 @@ ListNode * removeElements(ListNode* head, int val) {
 void printList(ListNode * head){
     ListNode * cur = head;
     while(cur != nullptr){
-        cout << cur->val << " ";
+        cout << cur->val << "->";
         cur = cur->next;
     }
 
