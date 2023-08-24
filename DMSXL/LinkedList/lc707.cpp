@@ -93,6 +93,7 @@ public:
         ListNode * temp = pre->next;
         pre->next = pre->next->next;
         delete temp;
+        temp = nullptr;
         size--;
     }
 
