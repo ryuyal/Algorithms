@@ -11,14 +11,14 @@ struct ListNode{
     ListNode * next;
 
     ListNode(){}
-    ListNode(int x): val(x), next(nullptr){}
+    ListNode(int x): val(x), next(nullptr){} // 初始化列表
     ListNode(int x, ListNode * n): val(x), next(n){}
 
 };
 
 ListNode * removeElements(ListNode* head, int val) {
-    ListNode * newH = new ListNode(0, head);
-    ListNode * pre = newH;
+    ListNode * dummyNode = new ListNode(0, head);
+    ListNode * pre = dummyNode;
     while(pre->next != nullptr){
         if (pre->next->val == val)
         {
@@ -27,7 +27,7 @@ ListNode * removeElements(ListNode* head, int val) {
             pre = pre->next;
         }
     }
-    return newH->next;
+    return dummyNode->next;
 }
 
 void printList(ListNode * head){
