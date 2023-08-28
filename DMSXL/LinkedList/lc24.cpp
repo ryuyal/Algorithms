@@ -47,9 +47,9 @@ ListNode * swapPairs2(ListNode * head){
 
     // 三步骤：
     /*
-     * pre 先指向 post
-     * post 指向 cur
-     * cur 指向post的next
+     * pre next先指向 post
+     * post next指向 cur
+     * cur next指向post的next
      */
 
     while(cur != nullptr && post != nullptr){
