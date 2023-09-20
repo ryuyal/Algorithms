@@ -40,11 +40,11 @@ int countNodes2(TreeNode * root){
     TreeNode * rightNode = root->right;
 
     int leftDepth = 0, rightDepth = 0;
-    while(leftNode){
+    while(leftNode){ // 左子树深度
         leftNode = leftNode->left;
         leftDepth++;
     }
-    while(rightNode){
+    while(rightNode){ // 右子树深度
         rightNode = rightNode->right;
         rightDepth++;
     }
