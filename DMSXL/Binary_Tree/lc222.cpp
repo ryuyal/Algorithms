@@ -50,7 +50,7 @@ int countNodes2(TreeNode * root){
     }
 
     if(leftDepth == rightDepth){
-        return (2<<leftDepth) - 1;
+        return (2<<leftDepth) - 1; // 树的高度为 h时, 满二叉树节点个数为 2^h-1
     }
 
     return countNodes2(root->left) + countNodes2(root->right) + 1;
