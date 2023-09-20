@@ -30,6 +30,26 @@ bool hasPathSum(TreeNode* root, int targetSum) {
     return hasPathSum(root->left, targetSum - root->val) || hasPathSum(root->right, targetSum - root->val);
 }
 
+/*
+ * 写法二
+ */
+bool traversal(TreeNode * root, int sum, int targetSum){
+    if(root == nullptr){
+        return false;
+    }
+
+    sum += root->val;
+    if(root->left == nullptr && root->right == nullptr && sum == targetSum){
+        return true;
+    }
+
+    return traversal(root->left, sum, targetSum) || traversal(root->right, sum, targetSum);
+
+}
+bool hasPathSum2(TreeNode* root, int targetSum) {
+    int sum = 0;
+    return traversal(root, sum, targetSum);
+}
 
 int main(){
 
