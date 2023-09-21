@@ -40,6 +40,9 @@ struct TreeNode{
 //    return isValidBST(root->left) && isValidBST(root->right);
 //}
 
+/*
+ * 我们要比较的是 左子树**所有**节点小于中间节点，右子树**所有**节点大于中间节点！！！！
+ */
 long long maxVal = LONG_MIN;
 bool isValidBST(TreeNode * root){
     if(root == nullptr){
