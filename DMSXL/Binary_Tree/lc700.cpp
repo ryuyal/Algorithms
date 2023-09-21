@@ -33,6 +33,19 @@ TreeNode* searchBST(TreeNode* root, int val) {
     }
 }
 
+TreeNode* searchBST2(TreeNode* root, int val) {
+    while (root != nullptr){
+        if(root->val == val){
+            return root;
+        }else if(root->val > val){
+            root = root->left;
+        }else{
+            root = root->right;
+        }
+    }
+    return nullptr;
+}
+
 int main() {
 
 }
