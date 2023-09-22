@@ -43,7 +43,7 @@ struct TreeNode{
 /*
  * 我们要比较的是 左子树**所有**节点小于中间节点，右子树**所有**节点大于中间节点！！！！
  */
-long long maxVal = LONG_MIN;
+long long maxVal = LONG_MIN; // maxVal记录前一个节点值 和当前节点作比较
 bool isValidBST(TreeNode * root){
     if(root == nullptr){
         return true;
