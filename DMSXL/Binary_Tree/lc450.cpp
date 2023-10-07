@@ -48,7 +48,7 @@ TreeNode* deleteNode(TreeNode* root, int key) {
         // 度为2, 左右子节点都有：其左子树转移到其右子树的最左节点的左子树上，然后右子树顶替其位置，由此删除了该节点
         // nextNode 就是当前节点的右子树的最左节点
         TreeNode * cur = root->right;
-        while(cur->left != nullptr){
+        while(cur->left != nullptr){ // 找到待删除节点的右子树的最左节点
             cur = cur->left;
         }
 
