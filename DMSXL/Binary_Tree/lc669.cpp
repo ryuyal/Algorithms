@@ -23,13 +23,14 @@ TreeNode* trimBST(TreeNode* root, int low, int high) {
         return nullptr;
     }
 
-    if(root->val < low){
+    if(root->val < low){ // 到右子树
         TreeNode * right = trimBST(root->right, low, high);
         return right;
     }
 
-    if(root->val > high){
+    if(root->val > high){ // d到左子树
         TreeNode * left = trimBST(root->left, low, high);
+        return left;
     }
 
     root->left = trimBST(root->left, low, high);
