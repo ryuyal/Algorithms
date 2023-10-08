@@ -25,14 +25,14 @@ void backtracking(int k, int n, int startIndex, int sum){
     for(int i = startIndex; i <= 9 -(k-path.size())+1; ++i){
         sum += i;
         path.push_back(i);
-        if(sum > n){
-            sum -= i;
-            path.pop_back();
-            return ;
-        }
+//        if(sum > n){
+//            sum -= i;
+//            path.pop_back();
+//            return ;
+//        }
         backtracking(k, n, i+1, sum); // 注意这里是i+1
-        path.pop_back();
-        sum -= i;
+        path.pop_back(); // 回溯
+        sum -= i; // sum也要回溯
     }
 }
 
