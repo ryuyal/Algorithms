@@ -10,6 +10,7 @@ using namespace std;
 vector<string> result;
 string s;
 
+// string类型的数组
 const string letterMap[10]{
         "", // 0
         "", // 1
