@@ -16,7 +16,7 @@ vector<int> path;
 
 
 // dfs深度优先遍历+回溯
-// n是树的最大宽度 k是树的深度
+// n是树中节点的最大度  k是树的深度
 void backtracking(int n, int k, int startIndex){
     if(path.size() == k){
         result.push_back(path);
