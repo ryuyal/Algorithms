@@ -24,6 +24,7 @@ const string letterMap[10]{
         "wxyz", // 9
 };
 
+// digits的长度代表树的深度
 void backtracking(const string & digits, int index){
     if(s.size() == digits.size()){
         result.push_back(s);
