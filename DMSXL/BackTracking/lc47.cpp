@@ -15,7 +15,6 @@ using namespace std;
  */
 /*vector<vector<int>> res;
 vector<int> path;
-unordered_set<int> uset;
 
 void dfs(vector<int> & nums, vector<bool> & used){
     if(path.size() == nums.size()){
