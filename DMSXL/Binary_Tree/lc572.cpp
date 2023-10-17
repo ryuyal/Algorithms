@@ -64,8 +64,17 @@ bool isSubtree(TreeNode* root, TreeNode* subRoot) {
         }
     }
     return false;
+}
+
+bool isSubtree2(TreeNode* root, TreeNode* subRoot) {
+    if(root == nullptr){
+        return false;
+    }
+
+    return isSameTree(root, subRoot) || isSubtree2(root->left, subRoot) || isSubtree2(root->right, subRoot);
 
 }
+
 
 int main(){
 

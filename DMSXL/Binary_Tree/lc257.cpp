@@ -18,12 +18,17 @@ struct TreeNode{
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-
+/*
+ * 前序遍历的变体
+ */
+// 传入根节点  存放结果集的res  记录每一条路径的path
 void treePaths(TreeNode * root, vector<string> & res, vector<int> & path){
     path.push_back(root->val);
 
-    if(root->left == nullptr && root->right == nullptr){
+
+    if(root->left == nullptr && root->right == nullptr){ // 走到了叶子节点
         string sPath;
+        // vector数组中的元素转换为string类型
         for(int i = 0; i < path.size()-1; ++i){
             sPath += to_string(path[i]);
             sPath += "->";
@@ -35,12 +40,12 @@ void treePaths(TreeNode * root, vector<string> & res, vector<int> & path){
 
     if(root->left != nullptr ){
         treePaths(root->left, res, path);
-        path.pop_back();
+        path.pop_back(); // 回溯
     }
 
     if(root->right != nullptr){
         treePaths(root->right, res, path);
-        path.pop_back();
+        path.pop_back(); // 回溯
     }
 }
 
@@ -56,6 +61,7 @@ vector<string> binaryTreePaths(TreeNode* root) {
 
     return res;
 }
+
 
 int main(){
 

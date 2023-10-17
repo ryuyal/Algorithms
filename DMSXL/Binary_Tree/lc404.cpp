@@ -17,6 +17,7 @@ struct TreeNode{
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// 迭代法
 int sumOfLeftLeaves(TreeNode* root) {
 
     if(root == nullptr){
@@ -36,8 +37,8 @@ int sumOfLeftLeaves(TreeNode* root) {
         TreeNode * tempNode = stk.top();
         stk.pop();
 
-        if(tempNode->left != nullptr){
-            if(tempNode->left->left == nullptr && tempNode->left->right == nullptr){
+        if(tempNode->left != nullptr){ // 首先确定该节点是左节点
+            if(tempNode->left->left == nullptr && tempNode->left->right == nullptr){ // 再确定是叶子节点
                 sum += tempNode->left->val;
             }
             stk.push(tempNode->left);
@@ -47,9 +48,25 @@ int sumOfLeftLeaves(TreeNode* root) {
             stk.push(tempNode->right);
         }
     }
-
     return sum;
+}
 
+// 递归法
+int sumOfLeftLeaves2(TreeNode* root) {
+    if(root == nullptr){
+        return 0;
+    }
+    if(root->left == nullptr && root->right == nullptr){
+        return 0;
+    }
+
+    int leftValue = 0;
+    if(root->left != nullptr){
+        if(root->left->left == nullptr && root->left->right == nullptr){
+            leftValue = root->left->val;
+        }
+    }
+    return leftValue + sumOfLeftLeaves2(root->left) + sumOfLeftLeaves2(root->right);
 }
 
 int main(){

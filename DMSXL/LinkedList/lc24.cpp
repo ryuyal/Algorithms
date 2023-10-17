@@ -48,8 +48,13 @@ ListNode * swapPairs2(ListNode * head){
     // 三步骤：
     /*
      * pre next先指向 post
+     * 保存一下post的下一个节点
      * post next指向 cur
      * cur next指向post的next
+     *
+     * 然后更新pre: cur
+     * 更新cur: per->next
+     * 更新post: cur->next
      */
 
     while(cur != nullptr && post != nullptr){
@@ -58,7 +63,7 @@ ListNode * swapPairs2(ListNode * head){
         post->next = cur;
         cur->next = temp;
 
-        pre = post->next;
+        pre = post->next;// or pre = cur;
         cur = pre->next;
 
         if (cur != nullptr)

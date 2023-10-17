@@ -4,7 +4,8 @@
 //
 
 #include <iostream>
-
+#include<stack>
+#include<algorithm>
 using namespace std;
 struct TreeNode{
     int val;
@@ -28,6 +29,31 @@ TreeNode* invertTree(TreeNode* root) {
     invertTree(root->left);
     invertTree(root->right);
 
+    return root;
+}
+
+// 迭代法
+
+TreeNode* invertTree2(TreeNode* root) {
+    if(root == nullptr || (root->left == nullptr && root->right == nullptr)){
+        return root;
+    }
+
+    stack<TreeNode *> stk;
+    stk.push(root);
+
+    while(!stk.empty()){
+        TreeNode * temp = stk.top();
+        stk.pop();
+
+        swap(temp->left, temp->right);
+        if(temp->right != nullptr){
+            stk.push(temp->right);
+        }
+        if(temp->left != nullptr){
+            stk.push(temp->left);
+        }
+    }
     return root;
 }
 

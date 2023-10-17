@@ -46,11 +46,11 @@ vector<int>inorderTraversal2(TreeNode * root){
     TreeNode * cur = root;
 
     while(cur != nullptr || !stk.empty()){
-        if(cur != nullptr){
+        if(cur != nullptr){ // cur指针 访问节点
             stk.push(cur);
-            cur = cur->left;
+            cur = cur->left; // 一直到最左端
         }else{
-            TreeNode * temp = stk.top();
+            TreeNode * temp = stk.top(); // 栈顶弹出
             stk.pop();
             res.push_back(temp->val);
             cur = temp->right;
