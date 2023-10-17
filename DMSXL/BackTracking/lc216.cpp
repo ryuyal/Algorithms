@@ -12,7 +12,7 @@ vector<vector<int>> result;
 vector<int> path;
 int sum = 0;
 
-void backtracking(int k, int n, int startIndex, int sum){
+void backtracking(int k, int n, int startIndex){
 
     if(path.size() == k){
         if(sum == n){
@@ -30,7 +30,7 @@ void backtracking(int k, int n, int startIndex, int sum){
 //            path.pop_back();
 //            return ;
 //        }
-        backtracking(k, n, i+1, sum); // 注意这里是i+1
+        backtracking(k, n, i+1); // 注意这里是i+1
         path.pop_back(); // 回溯
         sum -= i; // sum也要回溯
     }
