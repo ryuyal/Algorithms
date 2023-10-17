@@ -30,6 +30,9 @@ using namespace std;
  * （物品i的价值），就是背包放物品i得到的最大价值
  */
 
+/*
+ * 用二维数组表示
+ */
 void bag_problem1(){
     vector<int> weight = {1, 3, 4};
     vector<int> value = {15, 20, 30};
@@ -61,12 +64,44 @@ void bag_problem1(){
     }
 
     cout << dp[weight.size()-1][bagweight] << endl;
+}
+
+/*
+ * 用一维数组表示
+ */
+void bag_problem2(){
+    // dp[j]为 容量为j的背包所背的最大价值
+    // dp[j]可以通过dp[j - weight[i]]推导出来，dp[j - weight[i]]表示容量为j - weight[i]的背包所背的最大价值
+    /*
+     * 此时dp[j]有两个选择，一个是取自己dp[j] 相当于 二维dp数组中的dp[i-1][j]，即不放物品i，
+     * 一个是取dp[j - weight[i]] + value[i]，即放物品i，指定是取最大的，毕竟是求最大价值，
+     */
+
+    vector<int> weight = {1, 3, 4};
+    vector<int> value = {15, 20, 30};
+
+    int bagweight = 4;
+
+    vector<int> dp(bagweight + 1, 0);
+
+    for (int i = 0; i < weight.size(); ++i) { // 遍历物品
+        // 倒序遍历是为了保证物品i只被放入一次!!!
+        for (int j = bagweight; j >= weight[i]; --j) { // 遍历背包容量
+            dp[j] = max(dp[j], dp[j-weight[i]]+value[i]);
+        }
+    }
+
+    cout << dp[bagweight] << endl;
 
 }
+
+
 
 int main() {
 
     bag_problem1();
+
+    bag_problem2();
 
     return 0;
 
