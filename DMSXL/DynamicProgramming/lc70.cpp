@@ -4,7 +4,7 @@
 //
 
 #include <iostream>
-
+#include<vector>
 using namespace std;
 
 int climbStairs(int n) {
@@ -33,6 +33,30 @@ int climbStairs(int n) {
 //    return climbStairs(n-2) + climbStairs(n-1);
 //
 //}
+
+/*
+ * 记忆化搜索
+ */
+
+int dfs(int i, vector<int> & mem){
+    if(i == 1 || i == 2){
+        return i;
+    }
+    if(mem[i] != -1){
+        return mem[i];
+    }
+
+    int count = dfs(i-1, mem) + dfs(i-2, mem);
+    mem[i] = count;
+
+    return count;
+}
+
+int climbStairsDFSMem(int n){
+    vector<int> mem(n+1, -1);
+
+    return dfs(n, mem);
+}
 
 int main() {
     cout << climbStairs(3) << endl;
