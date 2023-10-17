@@ -25,6 +25,7 @@ int minCostClimbingStairs(vector<int>& cost) {
     return dp[cost.size()];
 }
 
+
 int main() {
 
     vector<int> cost = {1,100,1,1,1,100,1,1,100,1};
