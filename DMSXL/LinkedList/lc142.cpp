@@ -14,6 +14,7 @@ struct ListNode
     ListNode(){}
     ListNode(int v):val(v), next(nullptr){}
     ListNode(int v, ListNode * n):val(v), next(n){}
+
 };
 
 // 1. 快慢指针法
