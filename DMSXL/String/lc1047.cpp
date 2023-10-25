@@ -1,27 +1,32 @@
 //
 // Created by Liu on 2023/7/11.
-// Description: 
+// Description:
 //
 
-#include<iostream>
-#include<stack>
-#include<algorithm>
+#include <algorithm>
+#include <iostream>
+#include <stack>
 using namespace std;
 
-string removeDuplicates(string s) {
+string removeDuplicates(string s)
+{
     stack<char> stk;
 
-    for(char ch : s){
+    for (char ch : s)
+    {
         if (stk.empty() || stk.top() != ch)
         {
             stk.push(ch);
-        }else{
+        }
+        else
+        {
             stk.pop();
         }
     }
 
     string res = "";
-    while(!stk.empty()){
+    while (!stk.empty())
+    {
         res += stk.top();
         stk.pop();
     }
@@ -30,6 +35,6 @@ string removeDuplicates(string s) {
     return res;
 }
 
-int main(){
-
+int main()
+{
 }

@@ -1,12 +1,12 @@
 //
 // Created by Liu on 2023/7/5.
-// Description: 
+// Description:
 //
 
-#include<iostream>
-#include<vector>
-#include<unordered_map>
-#include<algorithm>
+#include <algorithm>
+#include <iostream>
+#include <unordered_map>
+#include <vector>
 using namespace std;
 
 // 超出时间限制
@@ -43,7 +43,6 @@ using namespace std;
 
 //     vector<bool> flag(len, 0);
 
-
 //     // bool flag[10] = {1}; // 只有数组第一个元素为1
 //     for(int i = 0; i < strs.size(); ++i){
 //         if (flag[i])
@@ -75,7 +74,8 @@ using namespace std;
 
 // }
 
-vector<vector<string>> groupAnagrams(vector<string>& strs) {
+vector<vector<string>> groupAnagrams(vector<string> &strs)
+{
     unordered_map<string, vector<string>> strMap;
 
     for (auto str : strs)
@@ -86,15 +86,16 @@ vector<vector<string>> groupAnagrams(vector<string>& strs) {
     }
 
     vector<vector<string>> res;
-    for(auto v : strMap){
+    for (auto v : strMap)
+    {
         res.push_back(v.second);
     }
 
     return res;
-
 }
 
-int main(){
+int main()
+{
     int n;
     cin >> n;
 
@@ -106,9 +107,11 @@ int main(){
 
     auto res = groupAnagrams(strs);
 
-    for(auto v : res){
-        cout << "[ " ;
-        for(auto s : v){
+    for (auto v : res)
+    {
+        cout << "[ ";
+        for (auto s : v)
+        {
             cout << s << " ";
         }
         cout << "]" << endl;

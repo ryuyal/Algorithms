@@ -1,26 +1,30 @@
 //
 // Created by Liu on 2023/7/2.
-// Description: 
+// Description:
 //
 
 #include <iostream>
-#include<vector>
-#include<unordered_map>
+#include <unordered_map>
+#include <vector>
 using namespace std;
 
-int totalFruit(vector<int> & nums){
+int totalFruit(vector<int> &nums)
+{
     int left = 0;
     int right = 0;
     int len = 0;
 
     unordered_map<int, int> uMap; // uMap 存储nums[i]及其个数
 
-    for (; right < nums.size(); ++right) {
+    for (; right < nums.size(); ++right)
+    {
         ++uMap[nums[right]];
 
-        while(uMap.size() > 2){ // 不满足条件
+        while (uMap.size() > 2)
+        { // 不满足条件
             uMap[nums[left]]--;
-            if (uMap[nums[left]] == 0){
+            if (uMap[nums[left]] == 0)
+            {
                 uMap.erase(nums[left]);
             }
 
@@ -32,13 +36,15 @@ int totalFruit(vector<int> & nums){
     return len;
 }
 
-int main() {
+int main()
+{
     int n;
-    cout <<  "Please input the number of elements: " <<  endl;
+    cout << "Please input the number of elements: " << endl;
     cin >> n;
 
     vector<int> nums(n);
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i)
+    {
         cin >> nums[i];
     }
 

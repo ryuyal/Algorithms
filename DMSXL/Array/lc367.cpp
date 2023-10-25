@@ -1,37 +1,47 @@
 //
 // Created by Liu on 2023/6/30.
-// Description: 
+// Description:
 //
 
 #include <iostream>
 
 using namespace std;
 
-bool isPerfectSquare(int num){
-    if(num == 0 || num == 1){
+bool isPerfectSquare(int num)
+{
+    if (num == 0 || num == 1)
+    {
         return true;
     }
-    if (num == 2){
+    if (num == 2)
+    {
         return false;
     }
 
     long left = -1;
     long right = num;
 
-    while(left + 1 != right){
+    while (left + 1 != right)
+    {
         long mid = left + (right - left) / 2;
-        if (num / mid == mid && num % mid == 0){
+        if (num / mid == mid && num % mid == 0)
+        {
             return true;
-        }else if(num / mid < mid){
+        }
+        else if (num / mid < mid)
+        {
             right = mid;
-        }else{
+        }
+        else
+        {
             left = mid;
         }
     }
     return false;
 }
 
-int main() {
+int main()
+{
     int num;
     cin >> num;
 

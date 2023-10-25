@@ -1,13 +1,13 @@
 
 //
 // Created by Yao on 2023/10/13.
-// Description:     
+// Description:
 //
 
+#include <algorithm>
 #include <iostream>
-#include<algorithm>
-#include<vector>
-#include<unordered_set>
+#include <unordered_set>
+#include <vector>
 using namespace std;
 
 /*
@@ -51,17 +51,22 @@ void dfs(vector<int> & nums, vector<bool> & used){
 vector<vector<int>> res;
 vector<int> path;
 
-void dfs(vector<int> & nums, vector<bool> & used){
-    if (path.size() == nums.size()){
+void dfs(vector<int> &nums, vector<bool> &used)
+{
+    if (path.size() == nums.size())
+    {
         res.push_back(path);
-        return ;
+        return;
     }
 
-    for (int i = 0; i < nums.size(); ++i) {
-        if(used[i]){
+    for (int i = 0; i < nums.size(); ++i)
+    {
+        if (used[i])
+        {
             continue;
         }
-        if (i > 0 && nums[i] == nums[i-1] && !used[i-1]){
+        if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1])
+        {
             continue;
         }
         used[i] = true;
@@ -72,7 +77,8 @@ void dfs(vector<int> & nums, vector<bool> & used){
     }
 }
 
-vector<vector<int>> permuteUnique(vector<int>& nums) {
+vector<vector<int>> permuteUnique(vector<int> &nums)
+{
     sort(nums.begin(), nums.end());
 
     vector<bool> used(nums.size(), false);
@@ -82,12 +88,15 @@ vector<vector<int>> permuteUnique(vector<int>& nums) {
     return res;
 }
 
-int main() {
-    vector<int> nums{1,1,2};
+int main()
+{
+    vector<int> nums{1, 1, 2};
     auto res = permuteUnique(nums);
 
-    for(auto v : res){
-        for(auto i : v){
+    for (auto v : res)
+    {
+        for (auto i : v)
+        {
             cout << i << " ";
         }
         cout << endl;

@@ -1,36 +1,42 @@
 
 //
 // Created by Yao on 2023/10/11.
-// Description:     
+// Description:
 //
 
 #include <iostream>
-#include<vector>
+#include <vector>
 using namespace std;
 /* 大顶堆 */
-class MaxHeap {
-private:
+class MaxHeap
+{
+  private:
     // 使用动态数组，这样无须考虑扩容问题
     vector<int> maxHeap;
 
     /* 获取左子节点索引 */
-    int left(int i) {
+    int left(int i)
+    {
         return 2 * i + 1;
     }
 
     /* 获取右子节点索引 */
-    int right(int i) {
+    int right(int i)
+    {
         return 2 * i + 2;
     }
 
     /* 获取父节点索引 */
-    int parent(int i) {
+    int parent(int i)
+    {
         return (i - 1) / 2; // 向下取整
     }
 
     /* 从节点 i 开始，从底至顶堆化 */
-    void siftUp(int i) {
-        while (true) {
+    void siftUp(int i)
+    {
+        while (true)
+        {
             // 获取节点 i 的父节点
             int p = parent(i);
             // 当“越过根节点”或“节点无须修复”时，结束堆化
@@ -44,8 +50,10 @@ private:
     }
 
     /* 从节点 i 开始，从顶至底堆化 */
-    void siftDown(int i) {
-        while (true) {
+    void siftDown(int i)
+    {
+        while (true)
+        {
             // 判断节点 i, l, r 中值最大的节点，记为 ma
             int l = left(i), r = right(i), ma = i;
             if (l < size() && maxHeap[l] > maxHeap[ma])
@@ -61,34 +69,40 @@ private:
         }
     }
 
-public:
+  public:
     /* 构造方法，根据输入列表建堆 */
-    MaxHeap(vector<int> nums) {
+    MaxHeap(vector<int> nums)
+    {
         // 将列表元素原封不动添加进堆
         maxHeap = nums;
         // 堆化除叶节点以外的其他所有节点
-        for (int i = parent(size() - 1); i >= 0; i--) {
+        for (int i = parent(size() - 1); i >= 0; i--)
+        {
             siftDown(i);
         }
     }
 
     /* 获取堆大小 */
-    int size() {
+    int size()
+    {
         return maxHeap.size();
     }
 
     /* 判断堆是否为空 */
-    bool isEmpty() {
+    bool isEmpty()
+    {
         return size() == 0;
     }
 
     /* 访问堆顶元素 */
-    int peek() {
+    int peek()
+    {
         return maxHeap[0];
     }
 
     /* 元素入堆 */
-    void push(int val) {
+    void push(int val)
+    {
         // 添加节点
         maxHeap.push_back(val);
         // 从底至顶堆化
@@ -96,9 +110,11 @@ public:
     }
 
     /* 元素出堆 */
-    void pop() {
+    void pop()
+    {
         // 判空处理
-        if (isEmpty()) {
+        if (isEmpty())
+        {
             throw out_of_range("堆为空");
         }
         // 交换根节点与最右叶节点（即交换首元素与尾元素）
@@ -110,7 +126,8 @@ public:
     }
 
     /* 打印堆（二叉树）*/
-    void print() {
+    void print()
+    {
         cout << "堆的数组表示：";
         printVector(maxHeap);
         cout << "堆的树状表示：" << endl;
@@ -121,7 +138,8 @@ public:
 };
 
 /* Driver Code */
-int main() {
+int main()
+{
     /* 初始化大顶堆 */
     vector<int> vec{9, 8, 6, 6, 7, 5, 2, 1, 4, 3, 6, 2};
     MaxHeap maxHeap(vec);

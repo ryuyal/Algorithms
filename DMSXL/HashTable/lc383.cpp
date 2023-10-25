@@ -1,29 +1,36 @@
 //
 // Created by Liu on 2023/7/4.
-// Description: 
+// Description:
 //
 
 #include <iostream>
-#include<unordered_map>
+#include <unordered_map>
 using namespace std;
 
-bool canConstruct(string ransomNote, string magazine) {
+bool canConstruct(string ransomNote, string magazine)
+{
     unordered_map<char, int> mMap;
-    for (char ch : magazine) {
+    for (char ch : magazine)
+    {
         mMap[ch]++;
     }
 
-    for (char ch : ransomNote) {
-        if (mMap[ch] > 0){
+    for (char ch : ransomNote)
+    {
+        if (mMap[ch] > 0)
+        {
             mMap[ch]--;
-        }else{
+        }
+        else
+        {
             return false;
         }
     }
     return true;
 }
 
-int main() {
+int main()
+{
     string ran;
     string mag;
 

@@ -1,11 +1,11 @@
 
 //
 // Created by Yao on 2023/10/11.
-// Description:     
+// Description:
 //
 
 #include <iostream>
-#include<queue>
+#include <queue>
 using namespace std;
 
 /*
@@ -14,8 +14,9 @@ using namespace std;
  *  如果不写后两个参数，那么容器默认用的是vector，比较方式默认用operator<，
  *  也就是优先队列是大顶堆，队头元素最大。
  */
-int main() {
-//    priority_queue<int, vector<int>, greater<int>> minHeap; // 小顶堆
+int main()
+{
+    //    priority_queue<int, vector<int>, greater<int>> minHeap; // 小顶堆
     priority_queue<int, vector<int>, less<int>> maxHeap; // 大顶堆
 
     maxHeap.push(1);
@@ -36,7 +37,7 @@ int main() {
     int size = maxHeap.size();
     cout << "maxHeap size = " << size << endl;
 
-    bool isEmpty = maxHeap.empty() ;
+    bool isEmpty = maxHeap.empty();
     cout << "Is maxHeap empty? " << (isEmpty == 1 ? "Yes" : "No") << endl;
 
     vector<int> input{1, 3, 2, 5, 4};

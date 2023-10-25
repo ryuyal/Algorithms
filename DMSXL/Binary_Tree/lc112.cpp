@@ -1,29 +1,37 @@
 //
 // Created by Liu on 2023/7/19.
-// Description: 
+// Description:
 //
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-struct TreeNode{
+struct TreeNode
+{
     int val;
-    TreeNode * left;
-    TreeNode * right;
+    TreeNode *left;
+    TreeNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    TreeNode() : val(0), left(nullptr), right(nullptr)
+    {
+    }
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr)
+    {
+    }
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right)
+    {
+    }
 };
 
-
-
-bool hasPathSum(TreeNode* root, int targetSum) {
-    if (root == nullptr) {
+bool hasPathSum(TreeNode *root, int targetSum)
+{
+    if (root == nullptr)
+    {
         return false;
     }
 
-    if (root->left == nullptr && root->right == nullptr && targetSum == root->val) {
+    if (root->left == nullptr && root->right == nullptr && targetSum == root->val)
+    {
         return true;
     }
 
@@ -33,24 +41,27 @@ bool hasPathSum(TreeNode* root, int targetSum) {
 /*
  * 写法二
  */
-bool traversal(TreeNode * root, int sum, int targetSum){
-    if(root == nullptr){
+bool traversal(TreeNode *root, int sum, int targetSum)
+{
+    if (root == nullptr)
+    {
         return false;
     }
 
     sum += root->val;
-    if(root->left == nullptr && root->right == nullptr && sum == targetSum){
+    if (root->left == nullptr && root->right == nullptr && sum == targetSum)
+    {
         return true;
     }
 
     return traversal(root->left, sum, targetSum) || traversal(root->right, sum, targetSum);
-
 }
-bool hasPathSum2(TreeNode* root, int targetSum) {
+bool hasPathSum2(TreeNode *root, int targetSum)
+{
     int sum = 0;
     return traversal(root, sum, targetSum);
 }
 
-int main(){
-
+int main()
+{
 }

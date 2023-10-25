@@ -1,12 +1,12 @@
 //
 // Created by Liu on 2023/7/5.
-// Description: 
+// Description:
 //
 
-#include<iostream>
-#include<vector>
-#include<unordered_map>
-#include<algorithm>
+#include <algorithm>
+#include <iostream>
+#include <unordered_map>
+#include <vector>
 using namespace std;
 
 // // 超出时间限制
@@ -31,7 +31,8 @@ using namespace std;
 //     return res;
 // }
 
-vector<int> findAnagrams(string s, string p) {
+vector<int> findAnagrams(string s, string p)
+{
     vector<int> res;
     if (s.length() < p.length())
     {
@@ -39,13 +40,14 @@ vector<int> findAnagrams(string s, string p) {
     }
 
     unordered_map<char, int> need, window;
-    for(char ch : p){
+    for (char ch : p)
+    {
         ++need[ch];
     }
 
     int left = 0, right = 0;
     int cnt = 0;
-    while(right < s.length())
+    while (right < s.length())
     {
         ++window[s[right]];
         if (window[s[right]] <= need[s[right]])
@@ -53,30 +55,31 @@ vector<int> findAnagrams(string s, string p) {
             ++cnt;
         }
 
-        while(left < right && window[s[left]] > need[s[left]]){
+        while (left < right && window[s[left]] > need[s[left]])
+        {
             --window[s[left++]];
         }
 
         if (cnt == p.length())
         {
-            if (right-left+1 == p.length()){
+            if (right - left + 1 == p.length())
+            {
                 res.push_back(left);
             }
-
         }
         ++right;
     }
 }
 
-int main(){
+int main()
+{
     string s, p;
     cin >> s;
     cin >> p;
 
     auto res = findAnagrams(s, p);
-    for ( auto v : res)
+    for (auto v : res)
     {
         cout << v << endl;
     }
-
 }

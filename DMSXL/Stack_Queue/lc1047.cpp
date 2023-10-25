@@ -1,43 +1,54 @@
 
 //
 // Created by Yao on 2023/9/18.
-// Description:     
+// Description:
 //
 
+#include <algorithm>
 #include <iostream>
-#include<stack>
-#include<algorithm>
+#include <stack>
 using namespace std;
 
-string removeDuplicates(string s) {
+string removeDuplicates(string s)
+{
 
     stack<char> stk;
 
-    for(char ch : s){
-        if (stk.empty() || stk.top() != ch){
+    for (char ch : s)
+    {
+        if (stk.empty() || stk.top() != ch)
+        {
             stk.push(ch);
-        }else{
+        }
+        else
+        {
             stk.pop();
         }
     }
 
-    string res="";
-    while(!stk.empty()){
-        res+=stk.top();
+    string res = "";
+    while (!stk.empty())
+    {
+        res += stk.top();
         stk.pop();
     }
     reverse(res.begin(), res.end());
     return res;
 }
 
-string removeDuplicates2(string s) {
+string removeDuplicates2(string s)
+{
 
     string res;
 
-    for(char ch : s){
-        if (res.empty() ||res.back() != ch){
+    for (char ch : s)
+    {
+        if (res.empty() || res.back() != ch)
+        {
             res.push_back(ch);
-        }else{
+        }
+        else
+        {
             res.pop_back();
         }
     }
@@ -45,8 +56,9 @@ string removeDuplicates2(string s) {
     return res;
 }
 
-int main() {
+int main()
+{
     string s = "abbaca";
     string res = removeDuplicates(s);
-    cout<< res << endl;
+    cout << res << endl;
 }

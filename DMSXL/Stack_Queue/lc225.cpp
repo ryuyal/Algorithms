@@ -1,25 +1,31 @@
 
 //
 // Created by Yao on 2023/9/18.
-// Description:     
+// Description:
 //
 
 #include <iostream>
-#include<queue>
+#include <queue>
 using namespace std;
 
-class MyStack{
-public:
-    MyStack(){}
+class MyStack
+{
+  public:
+    MyStack()
+    {
+    }
 
-    void push(int x){
+    void push(int x)
+    {
         que1.push(x);
     }
 
     // 栈顶元素弹出
-    int pop(){
-        int size = que1.size()-1;
-        for(int i = 0; i < size; ++i){
+    int pop()
+    {
+        int size = que1.size() - 1;
+        for (int i = 0; i < size; ++i)
+        {
             que2.push(que1.front());
             que1.pop();
         }
@@ -28,7 +34,8 @@ public:
         que1.pop();
         que1 = que2;
 
-        while(!que2.empty()){
+        while (!que2.empty())
+        {
             que2.pop();
         }
 
@@ -36,19 +43,22 @@ public:
     }
 
     // 返回栈顶元素
-    int top(){
+    int top()
+    {
         return que1.back();
     }
 
     //
-    bool empty(){
+    bool empty()
+    {
         return que1.empty();
     }
-private:
+
+  private:
     queue<int> que1;
     queue<int> que2;
 };
 
-int main() {
-
+int main()
+{
 }

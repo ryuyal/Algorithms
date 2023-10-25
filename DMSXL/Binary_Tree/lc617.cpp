@@ -1,32 +1,43 @@
 
 //
 // Created by Yao on 2023/9/21.
-// Description:     
+// Description:
 //
 
 #include <iostream>
 
 using namespace std;
 
-struct TreeNode{
+struct TreeNode
+{
     int val;
-    TreeNode * left;
-    TreeNode * right;
+    TreeNode *left;
+    TreeNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    TreeNode() : val(0), left(nullptr), right(nullptr)
+    {
+    }
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr)
+    {
+    }
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right)
+    {
+    }
 };
 
-TreeNode* mergeTrees(TreeNode * root1, TreeNode* root2) {
-    if(root1 == nullptr && root2 == nullptr){
+TreeNode *mergeTrees(TreeNode *root1, TreeNode *root2)
+{
+    if (root1 == nullptr && root2 == nullptr)
+    {
         return nullptr;
     }
 
-    if(root1 == nullptr && root2 != nullptr){
+    if (root1 == nullptr && root2 != nullptr)
+    {
         return root2;
     }
-    if(root1 != nullptr && root2 == nullptr){
+    if (root1 != nullptr && root2 == nullptr)
+    {
         return root1;
     }
 
@@ -38,6 +49,6 @@ TreeNode* mergeTrees(TreeNode * root1, TreeNode* root2) {
     return root1;
 }
 
-int main() {
-
+int main()
+{
 }

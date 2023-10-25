@@ -1,29 +1,37 @@
 //
 // Created by Liu on 2023/7/4.
-// Description: 
+// Description:
 //
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 struct ListNode
 {
     int val;
-    ListNode * next;
+    ListNode *next;
 
-    ListNode(){}
-    ListNode(int v):val(v), next(nullptr){}
-    ListNode(int v, ListNode * n):val(v), next(n){}
+    ListNode()
+    {
+    }
+    ListNode(int v) : val(v), next(nullptr)
+    {
+    }
+    ListNode(int v, ListNode *n) : val(v), next(n)
+    {
+    }
 };
 
-ListNode* swapPairs(ListNode* head) {
-    ListNode * dummyNode = new ListNode(0);
+ListNode *swapPairs(ListNode *head)
+{
+    ListNode *dummyNode = new ListNode(0);
     dummyNode->next = head;
-    ListNode * cur = dummyNode;
+    ListNode *cur = dummyNode;
 
-    while(cur->next != nullptr && cur->next->next != nullptr){
-        ListNode * tmp = cur->next;
-        ListNode * tmp1 = cur->next->next->next;
+    while (cur->next != nullptr && cur->next->next != nullptr)
+    {
+        ListNode *tmp = cur->next;
+        ListNode *tmp1 = cur->next->next->next;
 
         cur->next = cur->next->next;
         cur->next->next = tmp;
@@ -34,16 +42,17 @@ ListNode* swapPairs(ListNode* head) {
     return dummyNode->next;
 }
 
-ListNode * swapPairs2(ListNode * head){
+ListNode *swapPairs2(ListNode *head)
+{
     if (head == nullptr || head->next == nullptr)
     {
         return head;
     }
 
-    ListNode * dummyNode = new ListNode(0, head);
-    ListNode * pre = dummyNode;
-    ListNode * cur = head;
-    ListNode * post = cur->next;
+    ListNode *dummyNode = new ListNode(0, head);
+    ListNode *pre = dummyNode;
+    ListNode *cur = head;
+    ListNode *post = cur->next;
 
     // 三步骤：
     /*
@@ -57,13 +66,14 @@ ListNode * swapPairs2(ListNode * head){
      * 更新post: cur->next
      */
 
-    while(cur != nullptr && post != nullptr){
+    while (cur != nullptr && post != nullptr)
+    {
         pre->next = post;
-        ListNode * temp = post->next;
+        ListNode *temp = post->next;
         post->next = cur;
         cur->next = temp;
 
-        pre = post->next;// or pre = cur;
+        pre = post->next; // or pre = cur;
         cur = pre->next;
 
         if (cur != nullptr)
@@ -74,21 +84,24 @@ ListNode * swapPairs2(ListNode * head){
     return dummyNode->next;
 }
 
-void show(ListNode * head){
-    ListNode * cur = head;
-    while(cur != nullptr){
+void show(ListNode *head)
+{
+    ListNode *cur = head;
+    while (cur != nullptr)
+    {
         cout << cur->val << "->";
         cur = cur->next;
     }
     cout << endl;
 }
 
-int main(){
+int main()
+{
     int n;
     cin >> n;
 
-    ListNode * preHead = new ListNode();
-    ListNode * pre = preHead;
+    ListNode *preHead = new ListNode();
+    ListNode *pre = preHead;
     for (int i = 0; i < n; i++)
     {
         int val;
@@ -99,6 +112,6 @@ int main(){
 
     show(preHead->next);
 
-    ListNode * res = swapPairs2(preHead->next);
+    ListNode *res = swapPairs2(preHead->next);
     show(res);
 }

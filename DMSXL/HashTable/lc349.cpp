@@ -1,22 +1,26 @@
 //
 // Created by Liu on 2023/7/5.
-// Description: 
+// Description:
 //
 
 #include <iostream>
-#include<vector>
-#include<unordered_set>
+#include <unordered_set>
+#include <vector>
 using namespace std;
 
-vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+vector<int> intersection(vector<int> &nums1, vector<int> &nums2)
+{
     vector<int> res;
     unordered_set<int> set;
-    for (int num : nums1) {
+    for (int num : nums1)
+    {
         set.insert(num);
     }
 
-    for(int num : nums2){
-        if (set.count(num) > 0){
+    for (int num : nums2)
+    {
+        if (set.count(num) > 0)
+        {
             set.erase(num);
             res.push_back(num);
         }
@@ -24,6 +28,6 @@ vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
     return res;
 }
 
-int main() {
-
+int main()
+{
 }

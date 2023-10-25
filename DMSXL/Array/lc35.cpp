@@ -2,27 +2,35 @@
 // Created by Liu on 2023/6/29.
 //
 
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-int searchInsert(vector<int> & nums, int target){
+int searchInsert(vector<int> &nums, int target)
+{
     int left = -1, right = nums.size();
 
-    while(left + 1 != right){
-        int mid = left + (right - left) /2;
-        if (nums[mid] == target){
+    while (left + 1 != right)
+    {
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target)
+        {
             return mid;
-        }else if(nums[mid] < target){
+        }
+        else if (nums[mid] < target)
+        {
             left = mid;
-        }else{
+        }
+        else
+        {
             right = mid;
         }
     }
     return right;
 }
 
-int main(){
+int main()
+{
 
     int n;
     cout << "Please input the size of vector: " << endl;
@@ -30,7 +38,8 @@ int main(){
 
     cout << "Please input elements of vector: " << endl;
     vector<int> nums;
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i)
+    {
         int val;
         cin >> val;
         nums.push_back(val);
@@ -42,5 +51,4 @@ int main(){
 
     int res = searchInsert(nums, target);
     cout << res;
-
 }

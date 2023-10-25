@@ -1,27 +1,31 @@
 //
 // Created by Liu on 2023/7/27.
-// Description: 
+// Description:
 //
 
 #include <iostream>
-#include<vector>
+#include <vector>
 using namespace std;
 
 vector<vector<int>> result;
 vector<int> path;
 int sum = 0;
 
-void backtracking(vector<int> & candidates, int target, int startIndex){
-    if(sum > target){
-        return ;
+void backtracking(vector<int> &candidates, int target, int startIndex)
+{
+    if (sum > target)
+    {
+        return;
     }
 
-    if(sum == target){
+    if (sum == target)
+    {
         result.push_back(path);
-        return ;
+        return;
     }
 
-    for(int i = startIndex; i < candidates.size(); ++i){
+    for (int i = startIndex; i < candidates.size(); ++i)
+    {
         sum += candidates[i];
         path.push_back(candidates[i]);
         backtracking(candidates, target, i);
@@ -30,13 +34,13 @@ void backtracking(vector<int> & candidates, int target, int startIndex){
     }
 }
 
-vector<vector<int>> combinationSum(vector<int> & candidates, int target){
+vector<vector<int>> combinationSum(vector<int> &candidates, int target)
+{
     backtracking(candidates, target, 0);
 
     return result;
 }
 
-
-int main() {
-
+int main()
+{
 }

@@ -2,12 +2,14 @@
 // Created by Liu on 2023/6/29.
 //
 
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-vector<int> searchRange(vector<int> & nums, int target){
-    if (nums.empty()){
+vector<int> searchRange(vector<int> &nums, int target)
+{
+    if (nums.empty())
+    {
         return {-1, -1};
     }
 
@@ -15,41 +17,55 @@ vector<int> searchRange(vector<int> & nums, int target){
 
     vector<int> res(2);
     // 找到最后一个小于target的元素
-    while(left + 1 != right){
+    while (left + 1 != right)
+    {
         int mid = left + (right - left) / 2;
-        if (nums[mid] >= target){
+        if (nums[mid] >= target)
+        {
             right = mid;
-        }else{
+        }
+        else
+        {
             left = mid;
         }
     }
-    if (right != nums.size() && nums[right] == target){
+    if (right != nums.size() && nums[right] == target)
+    {
         res[0] = right;
-    }else{
+    }
+    else
+    {
         res[0] = -1;
     }
 
     // 找到第一个大于target的元素
     left = -1, right = nums.size();
-    while(left + 1 != right){
+    while (left + 1 != right)
+    {
         int mid = left + (right - left) / 2;
-        if (nums[mid] <= target){
+        if (nums[mid] <= target)
+        {
             left = mid;
-        }else{
+        }
+        else
+        {
             right = mid;
         }
     }
-    if (left != -1 && nums[left] == target){
+    if (left != -1 && nums[left] == target)
+    {
         res[1] = left;
-    }else{
+    }
+    else
+    {
         res[1] = -1;
     }
 
     return res;
 }
 
-
-int main(){
+int main()
+{
 
     int n;
     cout << "Please input the size of vector: " << endl;
@@ -57,7 +73,8 @@ int main(){
 
     cout << "Please input elements of vector: " << endl;
     vector<int> nums;
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i)
+    {
         int val;
         cin >> val;
         nums.push_back(val);
@@ -68,8 +85,8 @@ int main(){
     cin >> target;
 
     vector<int> res = searchRange(nums, target);
-    for (int num : res) {
+    for (int num : res)
+    {
         cout << num << " ";
     }
-
 }

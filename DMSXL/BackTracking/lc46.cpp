@@ -1,24 +1,28 @@
 
 //
 // Created by Yao on 2023/10/12.
-// Description:     
+// Description:
 //
 
 #include <iostream>
-#include<vector>
+#include <vector>
 using namespace std;
 
 vector<vector<int>> res;
 vector<int> path;
 
-void dfs(vector<int> & nums, vector<bool> & used){
-    if(path.size() == nums.size()){
+void dfs(vector<int> &nums, vector<bool> &used)
+{
+    if (path.size() == nums.size())
+    {
         res.push_back(path);
-        return ;
+        return;
     }
 
-    for (int i = 0; i < nums.size(); ++i) {
-        if(used[i] == true){
+    for (int i = 0; i < nums.size(); ++i)
+    {
+        if (used[i] == true)
+        {
             continue;
         }
         used[i] = true;
@@ -29,7 +33,8 @@ void dfs(vector<int> & nums, vector<bool> & used){
     }
 }
 
-vector<vector<int>> permute(vector<int>& nums) {
+vector<vector<int>> permute(vector<int> &nums)
+{
     vector<bool> used(nums.size(), false);
 
     dfs(nums, used);
@@ -37,6 +42,6 @@ vector<vector<int>> permute(vector<int>& nums) {
     return res;
 }
 
-int main() {
-
+int main()
+{
 }

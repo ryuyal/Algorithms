@@ -1,14 +1,14 @@
 //
 // Created by Liu on 2023/7/4.
-// Description: 
+// Description:
 //
 
-#include<iostream>
-#include<unordered_map>
+#include <iostream>
+#include <unordered_map>
 using namespace std;
 
-
-bool isAnagram(string s, string t) {
+bool isAnagram(string s, string t)
+{
     if (s.length() != t.length())
     {
         return false;
@@ -32,7 +32,9 @@ bool isAnagram(string s, string t) {
         if (map_t.count(ch) > 0)
         {
             map_t[ch]--;
-        }else{
+        }
+        else
+        {
             return false;
         }
     }
@@ -47,7 +49,8 @@ bool isAnagram(string s, string t) {
     return true;
 }
 
-int main(){
+int main()
+{
     string s, t;
     cin >> s;
     cin >> t;

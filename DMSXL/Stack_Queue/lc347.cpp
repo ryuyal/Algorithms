@@ -1,12 +1,12 @@
 //
 // Created by Liu on 2023/7/11.
-// Description: 
+// Description:
 //
 
-#include<iostream>
-#include<vector>
-#include<unordered_map>
-#include<queue>
+#include <iostream>
+#include <queue>
+#include <unordered_map>
+#include <vector>
 using namespace std;
 
 /*vector<int> topKFrequent(vector<int>& nums, int k) {
@@ -37,22 +37,26 @@ using namespace std;
     return res;
 }*/
 
-vector<int> topKFrequent(vector<int>& nums, int k) {
+vector<int> topKFrequent(vector<int> &nums, int k)
+{
     unordered_map<int, int> uMap;
-    for(int val : nums){
+    for (int val : nums)
+    {
         uMap[val]++;
     }
 
-    priority_queue<pair<int,int>> pq;
+    priority_queue<pair<int, int>> pq;
 
-    for(auto it : uMap){
-//        pq.emplace(it.second, it.first); // as same as below
+    for (auto it : uMap)
+    {
+        //        pq.emplace(it.second, it.first); // as same as below
         pq.push(pair(it.second, it.first));
     }
 
     vector<int> res;
 
-    for(int i = 0; i < k; ++i){
+    for (int i = 0; i < k; ++i)
+    {
         res.push_back(pq.top().second);
         pq.pop();
     }
@@ -60,14 +64,15 @@ vector<int> topKFrequent(vector<int>& nums, int k) {
     return res;
 }
 
-
-int main(){
+int main()
+{
     int n;
     cout << "Please input the number of elements: " << endl;
     cin >> n;
 
     vector<int> nums(n);
-    for(int i = 0; i < n; ++i){
+    for (int i = 0; i < n; ++i)
+    {
         cin >> nums[i];
     }
 
@@ -77,8 +82,8 @@ int main(){
 
     vector<int> res = topKFrequent(nums, k);
 
-    for(auto v : res){
+    for (auto v : res)
+    {
         cout << v << " ";
     }
-
 }

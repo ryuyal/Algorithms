@@ -1,18 +1,20 @@
 
 //
 // Created by Liu on 2023/7/6.
-// Description: 
+// Description:
 //
 
 #include <iostream>
-#include<vector>
+#include <vector>
 using namespace std;
 
-void reverseString(vector<char>& s) {
+void reverseString(vector<char> &s)
+{
     int left = 0;
-    int right = s.size()-1;
+    int right = s.size() - 1;
 
-    while(left < right){
+    while (left < right)
+    {
         char temp = s[left];
         s[left] = s[right];
         s[right] = temp;
@@ -21,6 +23,6 @@ void reverseString(vector<char>& s) {
     }
 }
 
-int main() {
-
+int main()
+{
 }

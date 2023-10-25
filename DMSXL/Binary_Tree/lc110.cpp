@@ -1,48 +1,62 @@
 //
 // Created by Liu on 2023/7/14.
-// Description: 
+// Description:
 //
 
-#include<iostream>
-#include<algorithm>
+#include <algorithm>
+#include <iostream>
 using namespace std;
 
-struct TreeNode{
+struct TreeNode
+{
     int val;
-    TreeNode * left;
-    TreeNode * right;
+    TreeNode *left;
+    TreeNode *right;
 
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    TreeNode() : val(0), left(nullptr), right(nullptr)
+    {
+    }
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr)
+    {
+    }
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right)
+    {
+    }
 };
 
-int getDepth(TreeNode * root){
-    if(root == nullptr){
+int getDepth(TreeNode *root)
+{
+    if (root == nullptr)
+    {
         return 0;
     }
 
-    if(root->left == nullptr && root->right == nullptr){
+    if (root->left == nullptr && root->right == nullptr)
+    {
         return 1;
     }
 
-    return max(getDepth(root->left), getDepth(root->right))+1;
+    return max(getDepth(root->left), getDepth(root->right)) + 1;
 }
 
 // 平衡二叉树 左右子树之差不超过1
-bool isBalanced(TreeNode* root) {
-    if(root == nullptr){
+bool isBalanced(TreeNode *root)
+{
+    if (root == nullptr)
+    {
         return true;
     }
 
-    if(root->left == nullptr && root->right == nullptr){
+    if (root->left == nullptr && root->right == nullptr)
+    {
         return true;
     }
 
     int leftDepth = getDepth(root->left);
     int rightDepth = getDepth(root->right);
 
-    if(abs(leftDepth - rightDepth) > 1){
+    if (abs(leftDepth - rightDepth) > 1)
+    {
         return false;
     }
 
@@ -53,28 +67,32 @@ bool isBalanced(TreeNode* root) {
  * 方法二
  */
 
-int getHeight(TreeNode * root){
-    if(root == nullptr){
+int getHeight(TreeNode *root)
+{
+    if (root == nullptr)
+    {
         return 0;
     }
 
     int leftHeight = getHeight(root->left);
-    if(leftHeight == -1){
+    if (leftHeight == -1)
+    {
         return -1;
     }
 
     int rightHeight = getHeight(root->right);
-    if(rightHeight == -1){
+    if (rightHeight == -1)
+    {
         return -1;
     }
 
-    return abs(leftHeight - rightHeight) > 1 ? -1 : 1+max(leftHeight, rightHeight);
+    return abs(leftHeight - rightHeight) > 1 ? -1 : 1 + max(leftHeight, rightHeight);
 }
 
-
-bool isBalanced2(TreeNode * root){
+bool isBalanced2(TreeNode *root)
+{
     return getHeight(root) == -1 ? false : true;
 }
-int main(){
-
+int main()
+{
 }
