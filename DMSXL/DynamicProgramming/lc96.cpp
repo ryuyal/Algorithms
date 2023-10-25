@@ -10,12 +10,13 @@ using namespace std;
 
 int numTrees(int n)
 {
-    vector<int> dp(n + 1); // dp[i] : i个不同元素节点组成的二叉搜索树的个数为dp[i]
-    dp[0] = 1;
     if (n < 2)
     {
         return 1;
     }
+
+    vector<int> dp(n + 1); // dp[i] : i个不同元素节点组成的二叉搜索树的个数为dp[i]
+    dp[0] = 1;
     dp[1] = 1;
     dp[2] = 2;
 
@@ -25,7 +26,7 @@ int numTrees(int n)
     {
         for (int j = 1; j <= i; ++j)
         {
-            dp[i] += dp[j - 1] * dp[i - j];
+            dp[i] += dp[j - 1] * dp[i - j]; // 这里j-1是左子树节点个数, i-j是右子树节点个数
         }
     }
 
@@ -34,4 +35,7 @@ int numTrees(int n)
 
 int main()
 {
+    int n = 3;
+    int res = numTrees(n);
+    cout << res << endl;
 }
