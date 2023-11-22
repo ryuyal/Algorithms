@@ -49,6 +49,31 @@ bool isAnagram(string s, string t)
     return true;
 }
 
+// 1122
+bool isAnagram2(string s, string t) {
+    unordered_map<char, int> sMap;
+
+    for(auto ch : s){
+        ++sMap[ch];
+    }
+
+
+    for(auto ch : t){
+        if(sMap[ch] <= 0){
+            return false;
+        }
+        --sMap[ch];
+        if(sMap[ch] == 0){
+            sMap.erase(ch);
+        }
+    }
+
+    if(sMap.size() == 0){
+        return true;
+    }
+    return false;
+}
+
 int main()
 {
     string s, t;

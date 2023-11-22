@@ -64,6 +64,43 @@ vector<int> searchRange(vector<int> &nums, int target)
     return res;
 }
 
+// 1121
+vector<int> searchRange2(vector<int>& nums, int target) {
+    int left = -1;
+    int right = nums.size();
+
+    vector<int> res{-1, -1};
+
+    while(left + 1 != right){
+        int mid = left + (right - left) / 2;
+        if(nums[mid] < target){
+            left = mid;
+        }else{
+            right = mid;
+        }
+    }
+    if(right != nums.size() && nums[right] == target){
+        res[0] = right;
+    }
+
+    left = -1;
+    right = nums.size();
+    while(left + 1 != right){
+        int mid = left + (right - left) / 2;
+        if(nums[mid] <= target){
+            left = mid;
+        }else{
+            right = mid;
+        }
+    }
+
+    if(left != -1 && nums[left] == target){
+        res[1] = left;
+    }
+
+    return res;
+}
+
 int main()
 {
 
