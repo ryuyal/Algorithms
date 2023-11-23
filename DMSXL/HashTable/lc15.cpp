@@ -34,14 +34,14 @@ vector<vector<int>> threeSum(vector<int> &nums)
 
         while (left < right)
         {
-            vector<int> temp;
+//            vector<int> temp;
             if (nums[left] + nums[right] == -nums[i])
             {
-                temp.push_back(nums[i]);
-                temp.push_back(nums[left]);
-                temp.push_back(nums[right]);
-                res.push_back(temp);
-
+//                temp.push_back(nums[i]);
+//                temp.push_back(nums[left]);
+//                temp.push_back(nums[right]);
+//                res.push_back(temp);
+                res.emplace_back(vector<int>{nums[i], nums[left], nums[right]});
                 while (left < right && nums[left] == nums[left + 1])
                 {
                     left++;

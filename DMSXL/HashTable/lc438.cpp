@@ -69,6 +69,7 @@ vector<int> findAnagrams(string s, string p)
         }
         ++right;
     }
+    return res;
 }
 
 int main()
