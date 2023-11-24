@@ -51,6 +51,34 @@ int fourSumCount(vector<int> &nums1, vector<int> &nums2, vector<int> &nums3, vec
     return res;
 }
 
+// 1124
+int fourSumCount2(vector<int>& nums1, vector<int>& nums2, vector<int>& nums3, vector<int>& nums4) {
+
+    unordered_map<int, int> map1;
+    for(auto num1 : nums1){
+        for(auto num2 : nums2){
+            ++map1[num1 + num2];
+        }
+    }
+
+    unordered_map<int, int> map2;
+    for(auto num1 : nums3){
+        for(auto num2 : nums4){
+            ++map2[num1 + num2];
+        }
+    }
+
+    int res = 0;
+    for(auto pair1 : map1){
+        for(auto pair2 : map2){
+            if(pair1.first == -pair2.first){
+                res += pair1.second * pair2.second;
+            }
+        }
+    }
+    return res;
+}
+
 int main()
 {
 }
